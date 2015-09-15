@@ -1,16 +1,20 @@
-# Application Name
+# Igpay Atinlay Anslatortray
 
-##### _{Brief description of application}, {Date of current version}_
+##### _JavaScript BDD practice for Epicodus, 15 September 2015_
 
-#### By **Molly Waggett**
+#### By **Andrea Padgett & Molly Waggett**
 
 ## Description
 
-{This is a detailed description of your application. Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. Do you want other developers to use this code in their apps? Talk about things like that here in simple terms.}
+This page allows a user to enter a sentence and receive its Pig Latin translation.
+If the sentence contains any words with no vowels, the user will be alerted that
+they have probably entered an invalid sentence. Punctuation is removed.
 
 ## Setup
 
 * Clone this repository.
+* Open the index.html file in your browser.
+* Ogay!
 
 ## Technologies Used
 
@@ -21,7 +25,7 @@
 
 ### Legal
 
-Copyright (c) 2015 **Molly Waggett**
+Copyright (c) 2015 **Andrea Padgett & Molly Waggett**
 
 This software is licensed under the MIT license.
 
