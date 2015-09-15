@@ -2,7 +2,12 @@ var pigLatin = function(sentence) {
   var wordArray = breakSentenceIntoWords(sentence);
   var pigLatinSentence = "";
   wordArray.forEach(function(word) {
-    pigLatinSentence = pigLatinSentence + pigLatinWord(word) + " ";
+    if (!containsVowel(word)) {
+      pigLatinSentence = "I see no vowels. Are you sure that's a sentence?";
+      return false;
+    } else {
+      pigLatinSentence = pigLatinSentence + pigLatinWord(word) + " ";
+    }
   });
   return pigLatinSentence;
 }
@@ -21,6 +26,15 @@ var pigLatinWord = function(word) {
     }
   }
   return addAy(word);
+}
+
+var containsVowel = function(word) {
+  for (var i = 0; i < word.length; i++) {
+    if (checkIfVowel(word[i])) {
+      return true;
+    }
+  }
+  return false;
 }
 
 var checkIfVowel = function(letter) {

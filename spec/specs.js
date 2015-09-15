@@ -2,6 +2,10 @@ describe('pigLatin', function() {
   it("translates a sentence into Pig Latin", function() {
     expect(pigLatin("yay this is quite a sentence")).to.equal("ayyay isthay isay itequay aay entencesay ");
   });
+
+  it("returns silly message if there's a word that doesn't contain vowels", function() {
+    expect(pigLatin("cookie kbnkjgdk")).to.equal("I see no vowels. Are you sure that's a sentence?");
+  });
 });
 
 describe('pigLatinWord', function(){
@@ -19,6 +23,17 @@ describe('pigLatinWord', function(){
 
   it("treats 'y' as a vowel in middle of word", function() {
     expect(pigLatinWord("rhythm")).to.equal("ythmrhay");
+  });
+
+});
+
+describe('containsVowel', function() {
+  it("returns true if word contains vowels", function() {
+    expect(containsVowel("pickle")).to.equal(true);
+  });
+
+  it("returns false if word doesn't contain vowels", function() {
+    expect(containsVowel("pckl")).to.equal(false);
   });
 });
 
