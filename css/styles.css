@@ -1,3 +1,40 @@
 #newsentence {
   display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  border: 3px solid black;
+  border-radius: 100px;
+  background: #E9967A;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+#lefteye{
+  position: fixed;
+  top:200px;
+  right:450px;
+  background: black;
+  border-radius: 100px;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+#righteye{
+  position: fixed;
+  top:200px;
+  left:450px;
+  background: black;
+  border-radius: 100px;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  background-color:  #d9534f;;
 }
