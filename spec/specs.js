@@ -4,7 +4,11 @@ describe('pigLatin', function() {
   });
 
   it("returns silly message if there's a word that doesn't contain vowels", function() {
-    expect(pigLatin("cookie kbnkjgdk")).to.equal("I see no vowels. Are you sure that's a sentence?");
+    expect(pigLatin("jbskrl cookie")).to.equal("I see no vowels. Are you sure that's a sentence?");
+  });
+
+  it("returns sentence without punctuation", function() {
+    expect(pigLatin("cats & dogs are CUTE!")).to.equal("atscay ogsday areay utecay ");
   });
 });
 
@@ -24,7 +28,16 @@ describe('pigLatinWord', function(){
   it("treats 'y' as a vowel in middle of word", function() {
     expect(pigLatinWord("rhythm")).to.equal("ythmrhay");
   });
+});
 
+describe('removePunctuationAndMakeLowerCase', function() {
+  it("returns sentence without punction", function() {
+    expect(removePunctuationAndMakeLowerCase("sentence & punctuation!")).to.equal("sentence  punctuation");
+  });
+
+  it("returns sentence all lowecase", function() {
+    expect(removePunctuationAndMakeLowerCase("ZOMG WOW")).to.equal("zomg wow");
+  });
 });
 
 describe('containsVowel', function() {

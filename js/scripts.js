@@ -1,15 +1,20 @@
 var pigLatin = function(sentence) {
+  sentence = removePunctuationAndMakeLowerCase(sentence);
   var wordArray = breakSentenceIntoWords(sentence);
   var pigLatinSentence = "";
+  var goodSentence = true;
   wordArray.forEach(function(word) {
     if (!containsVowel(word)) {
-      pigLatinSentence = "I see no vowels. Are you sure that's a sentence?";
-      return false;
+      goodSentence = false;
     } else {
       pigLatinSentence = pigLatinSentence + pigLatinWord(word) + " ";
     }
   });
-  return pigLatinSentence;
+  if (goodSentence) {
+    return pigLatinSentence;
+  } else {
+    return "I see no vowels. Are you sure that's a sentence?";
+  }
 }
 
 var pigLatinWord = function(word) {
@@ -26,6 +31,10 @@ var pigLatinWord = function(word) {
     }
   }
   return addAy(word);
+}
+
+var removePunctuationAndMakeLowerCase = function(sentence) {
+  return sentence.replace(/[^\w\s]|_/g, "").toLowerCase();
 }
 
 var containsVowel = function(word) {
@@ -77,7 +86,10 @@ var addAy = function(word) {
 }
 
 var breakSentenceIntoWords = function(sentence) {
-  return sentence.split(" ");
+  sentence = sentence.split(" ").filter(function(string) {
+    return string !== "";
+  });
+  return sentence;
 }
 
 $(document).ready(function() {
