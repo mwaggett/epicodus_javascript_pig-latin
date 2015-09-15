@@ -1,4 +1,13 @@
-var pigLatin = function(word) {
+var pigLatin = function(sentence) {
+  var wordArray = breakSentenceIntoWords(sentence);
+  var pigLatinSentence = "";
+  wordArray.forEach(function(word) {
+    pigLatinSentence = pigLatinSentence + pigLatinWord(word) + " ";
+  });
+  return pigLatinSentence;
+}
+
+var pigLatinWord = function(word) {
   if (checkIfY(returnFirstLetter(word))) {
     var letter = returnFirstLetter(word);
     word = appendLetterToEnd(removeFirstLetter(word), letter);
@@ -51,6 +60,10 @@ var appendLetterToEnd = function(word, letter) {
 
 var addAy = function(word) {
   return word + "ay";
+}
+
+var breakSentenceIntoWords = function(sentence) {
+  return sentence.split(" ");
 }
 
 // $(document).ready(function() {

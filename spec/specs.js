@@ -1,18 +1,24 @@
-describe('pigLatin', function(){
+describe('pigLatin', function() {
+  it("translates a sentence into Pig Latin", function() {
+    expect(pigLatin("yay this is quite a sentence")).to.equal("ayyay isthay isay itequay aay entencesay ");
+  });
+});
+
+describe('pigLatinWord', function(){
   it("attaches consonents and ay to end of word", function() {
-    expect(pigLatin("group")).to.equal("oupgray");
+    expect(pigLatinWord("group")).to.equal("oupgray");
   });
 
   it("just adds 'ay' to end when word starts with vowel", function() {
-    expect(pigLatin("apple")).to.equal("appleay");
+    expect(pigLatinWord("apple")).to.equal("appleay");
   });
 
   it("moves 'u' to end of word along with 'q'", function() {
-    expect(pigLatin("squeal")).to.equal("ealsquay");
+    expect(pigLatinWord("squeal")).to.equal("ealsquay");
   });
 
   it("treats 'y' as a vowel in middle of word", function() {
-    expect(pigLatin("rhythm")).to.equal("ythmrhay");
+    expect(pigLatinWord("rhythm")).to.equal("ythmrhay");
   });
 });
 
@@ -68,5 +74,11 @@ describe('appendLetterToEnd', function() {
 describe('addAy', function() {
   it("adds 'ay' to the end of a string", function() {
     expect(addAy("atc")).to.equal("atcay");
+  });
+});
+
+describe('breakSentenceIntoWords', function() {
+  it("returns array of words from sentence", function() {
+    expect(breakSentenceIntoWords("this is a sentence")).to.eql(["this", "is", "a", "sentence"]);
   });
 });
