@@ -66,6 +66,14 @@ var breakSentenceIntoWords = function(sentence) {
   return sentence.split(" ");
 }
 
-// $(document).ready(function() {
-//
-// });
+$(document).ready(function() {
+  $("form#english-sentence").submit(function(event) {
+    var sentence = $("input#input").val();
+    var result = pigLatin(sentence);
+
+    $(".sentence").text(result);
+
+    $("#newsentence").show();
+    event.preventDefault();
+  });
+});
